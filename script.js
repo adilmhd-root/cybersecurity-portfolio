@@ -145,24 +145,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-// --- 5. Telegram Contact Form Integration ---
-const contactForm = document.querySelector('.contact-form');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+// ===============================
 
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.textContent;
+document.addEventListener('DOMContentLoaded', () => {
 
-        // Get form values
-        const name = contactForm.querySelector('input[name="name"]').value;
-        const email = contactForm.querySelector('input[name="email"]').value;
-        const subject = contactForm.querySelector('input[name="subject"]').value;
-        const message = contactForm.querySelector('textarea[name="message"]').value;
+    // --- 5. Telegram Contact Form Integration ---
+    const contactForm = document.querySelector('.contact-form');
 
-        // Format Message
-        const text = `
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+
+            // Get form values
+            const name = contactForm.querySelector('input[name="name"]').value;
+            const email = contactForm.querySelector('input[name="email"]').value;
+            const subject = contactForm.querySelector('input[name="subject"]').value;
+            const message = contactForm.querySelector('textarea[name="message"]').value;
+
+            // Format Message
+            const text = `
 📩 *New Portfolio Contact*
 
 👤 *Name:* ${name}
@@ -171,51 +176,54 @@ if (contactForm) {
 
 💬 *Message:*
 ${message}
-        `;
+            `;
 
-        try {
-            // Show loading state
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            try {
+                // Show loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Sending...';
 
-            // Send to Cloudflare Worker (SAFE)
-            const response = await fetch(
-                "https://telegram-relay.adilmuhammedxp.workers.dev",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        message: text
-                    })
+                // Send to Cloudflare Worker (SAFE)
+                const response = await fetch(
+                    "https://telegram-relay.adilmuhammedxp.workers.dev",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            message: text
+                        })
+                    }
+                );
+
+                if (response.ok) {
+                    // Success
+                    submitBtn.style.backgroundColor = '#10B981';
+                    submitBtn.textContent = 'Message Sent! 🚀';
+                    contactForm.reset();
+
+                    setTimeout(() => {
+                        submitBtn.style.backgroundColor = '';
+                        submitBtn.textContent = originalBtnText;
+                        submitBtn.disabled = false;
+                    }, 3000);
+                } else {
+                    throw new Error('Worker API Error');
                 }
-            );
 
-            if (response.ok) {
-                // Success
-                submitBtn.style.backgroundColor = '#10B981'; // Green
-                submitBtn.textContent = 'Message Sent! 🚀';
-                contactForm.reset();
+            } catch (error) {
+                console.error('Error sending message:', error);
+                submitBtn.style.backgroundColor = '#EF4444';
+                submitBtn.textContent = 'Failed to Send';
 
                 setTimeout(() => {
                     submitBtn.style.backgroundColor = '';
                     submitBtn.textContent = originalBtnText;
                     submitBtn.disabled = false;
                 }, 3000);
-            } else {
-                throw new Error('Worker API Error');
             }
-        } catch (error) {
-            console.error('Error sending message:', error);
-            submitBtn.style.backgroundColor = '#EF4444'; // Red
-            submitBtn.textContent = 'Failed to Send';
+        });
+    }
 
-            setTimeout(() => {
-                submitBtn.style.backgroundColor = '';
-                submitBtn.textContent = originalBtnText;
-                submitBtn.disabled = false;
-            }, 3000);
-        }
-    });
-}
+});
