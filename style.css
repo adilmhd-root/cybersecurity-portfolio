@@ -307,6 +307,29 @@ ul {
     color: var(--text-main);
 }
 
+/* Button Animation States */
+.btn.processing {
+    transform: scale(0.95) !important;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn .fa-check {
+    animation: scaleCheck 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes scaleCheck {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 /* --- Attack/Defense Flow Visual --- */
 .flow-wrapper {
     width: 100%;
