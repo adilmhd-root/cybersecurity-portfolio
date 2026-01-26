@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const frameworkCards = document.querySelectorAll('.framework-card');
     const deploymentCards = document.querySelectorAll('.deployment-card');
-    
+
     frameworkCards.forEach((card, index) => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
@@ -147,24 +147,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 5. Telegram Contact Form Integration ---
     const contactForm = document.querySelector('.contact-form');
-    
+
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.textContent;
-            
+            const originalBtnContent = submitBtn.innerHTML;
+
             // Get form values
             const name = contactForm.querySelector('input[name="name"]').value;
             const email = contactForm.querySelector('input[name="email"]').value;
             const subject = contactForm.querySelector('input[name="subject"]').value;
             const message = contactForm.querySelector('textarea[name="message"]').value;
-            
-            // Telegram Config
-            const botToken = "8202647009:AAHH2NTfMPLL-xl24T6ddmzGKRTF36mSvaw";
-            const chatId = "7092542861";
-            
+
             // Format Message
             const text = `
 📩 *New Portfolio Contact*
@@ -176,47 +172,56 @@ document.addEventListener('DOMContentLoaded', () => {
 💬 *Message:*
 ${message}
             `;
-            
+
             try {
-                // Show loading state
+                // Animation Step 1: Scale Down & Spinner
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                
-                // Send to Telegram
-                const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                submitBtn.classList.add('processing');
+                submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i>';
+
+                // Send to Cloudflare Worker
+                const response = await fetch('https://telegram-relay.adilmuhammedxp.workers.dev', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        chat_id: chatId,
-                        text: text,
-                        parse_mode: 'Markdown'
+                        text: text
                     })
                 });
-                
+
                 if (response.ok) {
-                    // Success
-                    submitBtn.style.backgroundColor = '#10B981'; // Green
-                    submitBtn.textContent = 'Message Sent! 🚀';
-                    contactForm.reset();
-                    
+                    // Animation Step 2: Morph to Checkmark
+                    // Use a slight delay to ensure the spinner is seen if the request is too fast
                     setTimeout(() => {
-                        submitBtn.style.backgroundColor = '';
-                        submitBtn.textContent = originalBtnText;
-                        submitBtn.disabled = false;
-                    }, 3000);
+                        submitBtn.innerHTML = '<i class="fas fa-check" style="color: #059669;"></i>'; // Emerald-600 for premium dark feeling
+
+                        // Animation Step 3: Change Label to "Sent"
+                        setTimeout(() => {
+                            submitBtn.textContent = 'Sent';
+                            // Optional: Keep it slightly scaled or return to normal?
+                            // "Slightly scale down" was step 1. Usually we return to normal on completion.
+                            submitBtn.classList.remove('processing');
+                            contactForm.reset();
+
+                            // Reset to original state after 3 seconds
+                            setTimeout(() => {
+                                submitBtn.innerHTML = originalBtnContent;
+                                submitBtn.disabled = false;
+                            }, 3000);
+                        }, 1000); // Show checkmark for 1s
+                    }, 500); // Minimum spinner time
+
                 } else {
                     throw new Error('Telegram API Error');
                 }
             } catch (error) {
                 console.error('Error sending message:', error);
-                submitBtn.style.backgroundColor = '#EF4444'; // Red
-                submitBtn.textContent = 'Failed to Send';
-                
+                submitBtn.innerHTML = '<i class="fas fa-times" style="color: #ef4444;"></i>';
+                submitBtn.classList.remove('processing');
+
                 setTimeout(() => {
-                    submitBtn.style.backgroundColor = '';
-                    submitBtn.textContent = originalBtnText;
+                    submitBtn.innerHTML = originalBtnContent;
                     submitBtn.disabled = false;
                 }, 3000);
             }
