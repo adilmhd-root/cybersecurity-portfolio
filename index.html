@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adil Muhammad | Security Operations</title>
+    <meta name="description" content="Portfolio of Adil Muhammad - Cybersecurity Researcher & Penetration Tester">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Background Grid -->
+    <div class="grid-bg"></div>
+    <div class="vignette"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">ADIL<span class="dot">.</span>MUHAMMAD</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">01. About</a></li>
+                <li><a href="#experience" class="nav-link">02. Experience</a></li>
+                <li><a href="#projects" class="nav-link">03. Work</a></li>
+                <li><a href="#skills" class="nav-link">04. Arsenal</a></li>
+                <li><a href="#contact" class="nav-link btn-contact">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container hero-container">
+                <div class="hero-text fade-in-up">
+                    <span class="accent-label">ADIL MUHAMMAD P</span>
+                    <h1 class="glitch-header">Cybersecurity <br> <span class="text-gradient">Researcher.</span></h1>
+                    <p class="hero-sub">
+                        I help identify security weaknesses to make systems stronger and more secure. <br>
+                        Explore my operations below.
+                    </p>
+
+                    <div class="cta-group">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Get in Touch</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://github.com/adilmhd-root" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="assets/Adil_Muhammad_Resume.pdf" download="Adil_Muhammad_Resume.pdf"
+                            class="btn btn-ghost">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Resume</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Attack -> Defense Flow Visual -->
+                <div class="flow-wrapper fade-in-up delay-1">
+                    <div class="flow-header">
+                        <h3>Attack <span class="accent-arrow">→</span> Defense Flow</h3>
+                        <p>From identifying vulnerabilities to strengthening defenses</p>
+                    </div>
+
+                    <div class="attack-defense-flow">
+                        <!-- Stage 1 -->
+                        <div class="flow-stage" data-step="1">
+                            <div class="flow-icon">
+                                <i class="fas fa-radar"></i>
+                            </div>
+                            <div class="flow-content top">
+                                <h4>Recon</h4>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="flow-connector"></div>
+
+                        <!-- Stage 2 -->
+                        <div class="flow-stage" data-step="2">
+                            <div class="flow-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <div class="flow-content">
+                                <h4>Vuln ID</h4>
+                            </div>
+                            <div class="flow-details">
+                                <p>Mapping weaknesses & flaws</p>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="flow-connector"></div>
+
+                        <!-- Stage 3 -->
+                        <div class="flow-stage" data-step="3">
+                            <div class="flow-icon">
+                                <i class="fas fa-crosshairs"></i>
+                            </div>
+                            <div class="flow-content top">
+                                <h4>Exploitation</h4>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="flow-connector"></div>
+
+                        <!-- Stage 4 -->
+                        <div class="flow-stage" data-step="4">
+                            <div class="flow-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="flow-content">
+                                <h4>Impact</h4>
+                            </div>
+                            <div class="flow-details">
+                                <p>Assessing business severity</p>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="flow-connector"></div>
+
+                        <!-- Stage 5 -->
+                        <div class="flow-stage defense-stage" data-step="5">
+                            <div class="flow-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="flow-content">
+                                <h4>Mitigation</h4>
+                            </div>
+                            <div class="flow-details">
+                                <p>Hardening & Patching</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid About/Skills Hybrid -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">About & Stack</h2>
+                </div>
+
+                <div class="bento-grid">
+                    <!-- Profile Card -->
+                    <div class="bento-card profile-card fade-in-up">
+                        <h3>Adil Muhammad</h3>
+                        <h4 class="big-heading">Focused on Penetration Testing and Security Operations</h4>
+                        <p class="profile-text text-muted">
+                            Currently building systems and breaking them in a controlled environment,
+                            actively identifying vulnerabilities and helping mitigate security risks.
+                            Passionate about Malware Analysis and Network Defense.
+                        </p>
+                    </div>
+
+                    <!-- Core Focus -->
+                    <div class="bento-card focus-card fade-in-up delay-1">
+                        <h3>Core Focus</h3>
+                        <div class="focus-list">
+                            <div class="focus-item">
+                                <i class="fas fa-network-wired"></i>
+                                <span>Network Security</span>
+                            </div>
+                            <div class="focus-item">
+                                <i class="fas fa-bug"></i>
+                                <span>Penetration Testing</span>
+                            </div>
+                            <div class="focus-item">
+                                <i class="fas fa-shield-virus"></i>
+                                <span>Malware Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack (Languages) -->
+                    <div class="bento-card tech-card fade-in-up delay-2">
+                        <h3>Languages</h3>
+                        <div class="tag-cloud">
+                            <span class="tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="tag"><i class="fas fa-terminal"></i> Bash</span>
+                            <span class="tag"><i class="fab fa-html5"></i> HTML/CSS</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools (Badges) -->
+                    <div class="bento-card tools-card fade-in-up delay-3">
+                        <h3>security tools</h3>
+                        <div class="tool-icons">
+                            <i class="fas fa-ghost" title="Burp Suite"></i>
+                            <i class="fas fa-spider" title="Nmap"></i>
+                            <i class="fas fa-shield-alt" title="Nessus"></i>
+                            <i class="fas fa-fish" title="Wireshark"></i>
+                            <i class="fas fa-lock" title="John the Ripper"></i>
+                            <i class="fas fa-database" title="SQLMap"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">Experience</h2>
+                </div>
+
+                <div class="experience-list">
+                    <div class="exp-item fade-in-up">
+                        <div class="exp-left">
+                            <span class="exp-date">Current</span>
+                        </div>
+                        <div class="exp-content">
+                            <h3>Trainee Cybersecurity Analyst</h3>
+                            <span class="exp-company">Offenso Hackers Academy</span>
+                            <ul class="exp-details">
+                                <li>Assisting with network security assessments and vulnerability scans.</li>
+                                <li>Executing <strong>Penetration testing methodologies</strong> on authorized targets.
+                                </li>
+                                <li>Supporting <strong>Security Operations</strong> and incident response drills.</li>
+                                <li>Performing Vulnerability Assessments and conducting Threat Analysis.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">Selected Works</h2>
+                </div>
+
+                <div class="project-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card fade-in-up">
+                        <div class="project-top">
+                            <div class="folder-icon"><i class="far fa-folder-open"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/adilmhd-root" target="_blank"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3>API Security Testing</h3>
+                        <p>Comprehensive security testing framework for RESTful APIs to identify unauthorized access
+                            points, IDORs, and data leakage.</p>
+                        <div class="project-tags">
+                            <span>Burp Suite</span>
+                            <span>Python</span>
+                            <span>Postman</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card fade-in-up delay-1">
+                        <div class="project-top">
+                            <div class="folder-icon"><i class="far fa-folder-open"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/adilmhd-root" target="_blank"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3>Command Injection Detector</h3>
+                        <p>Automated Python tool designed to fuzz and detect potential command injection vulnerabilities
+                            in web interface inputs.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Regex</span>
+                            <span>Fuzzing</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card fade-in-up delay-2">
+                        <div class="project-top">
+                            <div class="folder-icon"><i class="far fa-folder-open"></i></div>
+                        </div>
+                        <h3>Bug Bounty Research</h3>
+                        <p>Ongoing active research and reporting on major platforms. Focusing on logic flaws and
+                            advanced exploitation chains.</p>
+                        <div class="project-tags">
+                            <span>HackerOne</span>
+                            <span>Bugcrowd</span>
+                            <span>Recon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Combined Methodologies & Certs Section -->
+        <!-- Modern Minimalist Intel Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">Certifications & Operations</h2>
+                </div>
+
+                <div class="intel-minimal">
+
+                    <!-- Certification Gallery -->
+                    <div class="cert-gallery">
+                        <div class="cert-item fade-in-up">
+                            <div class="cert-visual">
+                                <img src="assets/certifications/ccep.jpg" alt="CCEP Certification">
+                                <div class="cert-overlay"></div>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-header">
+                                    <h3 class="cert-title">CCEP</h3>
+                                    <span class="cert-year">2025</span>
+                                </div>
+                                <p class="cert-desc">Certified Cybersecurity Educator Professional</p>
+                                <span class="cert-org">Red Team Leaders</span>
+                            </div>
+                        </div>
+
+                        <div class="cert-item fade-in-up delay-1">
+                            <div class="cert-visual">
+                                <img src="assets/certifications/tcs-analyst.jpg" alt="TCS Analyst">
+                                <div class="cert-overlay"></div>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-header">
+                                    <h3 class="card-title">Threat Detection & Analysis</h3>
+                                    <span class="cert-year">2025</span>
+                                </div>
+                                <p class="cert-desc">Virtual Experience Program</p>
+                                <span class="cert-org">Tata Consultancy Services</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- View All Certs Action -->
+                    <div class="cert-action-row fade-in-up delay-1">
+                        <a href="certifications.html" class="btn-highlight with-preview">
+                            <div class="cert-stack-preview">
+                                <img src="assets/certifications/ccep.jpg" alt="">
+                                <img src="assets/certifications/tcs-analyst.jpg" alt="">
+                                <div class="stack-more">+3</div>
+                            </div>
+                            <span>View All Certifications</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Methodologies & Active Deployments - New Minimalist Design -->
+                    <div class="methods-deployments-wrapper fade-in-up delay-2">
+                        <!-- Frameworks Section -->
+                        <div class="methodologies-section">
+                            <div class="section-label">
+                                <span class="label-line"></span>
+                                <span class="label-text">METHODOLOGIES</span>
+                                <span class="label-line"></span>
+                            </div>
+                            <div class="frameworks-grid">
+                                <div class="framework-card" data-framework="owasp">
+                                    <div class="framework-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="framework-content">
+                                        <h4>OWASP Top 10</h4>
+                                        <p>Security Standards</p>
+                                    </div>
+                                    <div class="framework-overlay"></div>
+                                </div>
+                                <div class="framework-card" data-framework="ptes">
+                                    <div class="framework-icon">
+                                        <i class="fas fa-clipboard-check"></i>
+                                    </div>
+                                    <div class="framework-content">
+                                        <h4>PTES Standard</h4>
+                                        <p>Testing Framework</p>
+                                    </div>
+                                    <div class="framework-overlay"></div>
+                                </div>
+                                <div class="framework-card" data-framework="mitre">
+                                    <div class="framework-icon">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <div class="framework-content">
+                                        <h4>MITRE ATT&CK</h4>
+                                        <p>Threat Modeling</p>
+                                    </div>
+                                    <div class="framework-overlay"></div>
+                                </div>
+                                <div class="framework-card" data-framework="nist">
+                                    <div class="framework-icon">
+                                        <i class="fas fa-cog"></i>
+                                    </div>
+                                    <div class="framework-content">
+                                        <h4>NIST</h4>
+                                        <p>Security Framework</p>
+                                    </div>
+                                    <div class="framework-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Active Deployments Section -->
+                        <div class="deployments-section">
+                            <div class="section-label">
+                                <span class="label-line"></span>
+                                <span class="label-text">ACTIVE DEPLOYMENTS</span>
+                                <span class="label-line"></span>
+                            </div>
+                            <div class="deployments-grid">
+                                <a href="https://tryhackme.com/p/adilmuhammedxp" target="_blank" class="deployment-card"
+                                    data-deployment="tryhackme">
+                                    <div class="deployment-icon">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div class="deployment-info">
+                                        <h4>TryHackMe</h4>
+                                        <span class="deployment-status">Active</span>
+                                    </div>
+                                    <div class="deployment-glow"></div>
+                                </a>
+                                <a href="#" class="deployment-card" data-deployment="htb">
+                                    <div class="deployment-icon">
+                                        <i class="fas fa-cube"></i>
+                                    </div>
+                                    <div class="deployment-info">
+                                        <h4>HackTheBox</h4>
+                                        <span class="deployment-status">Active</span>
+                                    </div>
+                                    <div class="deployment-glow"></div>
+                                </a>
+                                <a href="#" class="deployment-card" data-deployment="portswigger">
+                                    <div class="deployment-icon">
+                                        <i class="fas fa-shield-virus"></i>
+                                    </div>
+                                    <div class="deployment-info">
+                                        <h4>PortSwigger</h4>
+                                        <span class="deployment-status">Active</span>
+                                    </div>
+                                    <div class="deployment-glow"></div>
+                                </a>
+                                <a href="#" class="deployment-card" data-deployment="vulnhub">
+                                    <div class="deployment-icon">
+                                        <i class="fas fa-server"></i>
+                                    </div>
+                                    <div class="deployment-info">
+                                        <h4>VulnHub</h4>
+                                        <span class="deployment-status">Active</span>
+                                    </div>
+                                    <div class="deployment-glow"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <div class="container">
+            <div class="disclaimer fade-in-up">
+                <i class="fas fa-exclamation-circle"></i>
+                <p><strong>ETHICAL DISCLAIMER:</strong> All activities presented here were performed on intentionally
+                    vulnerable labs or authorized platforms (TryHackMe, HTB, Bug Bounty). I strictly adhere to legal
+                    boundaries and do not endorse unauthorized access.</p>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <span class="section-number">05</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                </div>
+
+                <div class="contact-content fade-in-up">
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <h3>Let's Connect</h3>
+                        <p>
+                            Interested in cybersecurity collaboration or have questions
+                            about security assessments? Feel free to reach out!
+                        </p>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <a href="mailto:adilmuhammedxp@gmail.com">
+                                    adilmuhammedxp@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://github.com/adilmhd-root" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/adil-muhammad-738918295/" target="_blank"
+                                class="social-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="https://www.instagram.com/aadhil_.mhd/" target="_blank" class="social-link">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="subject" placeholder="Subject" required>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container footer-content">
+                <p>Designed & Built by Adil Muhammad</p>
+                <p class="copyright">&copy; 2025</p>
+            </div>
+        </footer>
+
+        <!-- End Section Interaction -->
+        <div class="end-section-trigger">
+            <div class="end-interaction-content">
+                <div class="lock-wrapper">
+                    <i class="fas fa-lock lock-icon"></i>
+                    <i class="fas fa-check check-icon"></i>
+                </div>
+                <div class="end-cursor">_</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
